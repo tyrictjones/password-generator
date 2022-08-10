@@ -34,6 +34,16 @@ if (includeSpecial) {
 };
 console.log(fullSet);
 
+newPassword = "";
+
+for (i = 0; i <= passwordLength; i++) {
+  getRandomIndex = Math.floor(Math.random() * fullSet.length);
+  getNextCharacter = fullSet[getRandomIndex];
+  newPassword = newPassword + getNextCharacter;
+};
+console.log(newPassword);
+
+
 
 
 // Get references to the #generate element
