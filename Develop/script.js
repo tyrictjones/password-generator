@@ -1,4 +1,5 @@
 // Assignment code here
+var generatePassword = function () {
 var passwordLength = window.prompt("Enter a password length.");
 if (passwordLength > 128 || passwordLength < 8 || !passwordLength) {
   window.alert("Password must be between 8 and 128 characters. Try again!");
@@ -42,6 +43,8 @@ for (i = 0; i <= passwordLength; i++) {
   newPassword = newPassword + getNextCharacter;
 };
 console.log(newPassword);
+return newPassword;
+};//end of generate password function
 
 
 
