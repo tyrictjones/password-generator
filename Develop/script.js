@@ -6,18 +6,21 @@ var generatePassword = function () {
   //Prompt user to enter a password length  
   var passwordLength = window.prompt("Enter a password length.");
 
-  //If length is not 8-128 characters or left blank, prompt user to try again
-  if (passwordLength > 128 || passwordLength < 8) {
-    window.alert("Password must be between 8 and 128 characters. Try again!");
-    generatePassword();
-  } else if (!passwordLength) {
-    window.alert("You must choose a length for your password. Try again!");
-  } else {
-    window.alert("You password will be " + passwordLength + " characters long.");
+  //If user does not enter a password length, prompt user to try again
+  if (!passwordLength) {
+    while(!passwordLength) {
+      window.alert("You must enter a length for your password. Try again!");
+      passwordLength = window.prompt("Enter a password length.");
+    }
   }
 
-  
-
+  //If length is not 8-128 characters or left blank, prompt user to try again
+  if (passwordLength > 128 || passwordLength < 8) {
+    while(passwordLength > 128 || passwordLength < 8) {
+      window.alert("Your password must be between 8 and 128 characters. Try again!");
+      passwordLength = window.prompt("Enter a password length.");
+    }
+  }
 
   console.log("Password length: " + passwordLength);
 
