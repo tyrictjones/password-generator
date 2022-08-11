@@ -68,7 +68,6 @@ var generatePassword = function () {
     getNextCharacter = fullSet[getRandomIndex];
     newPassword = newPassword + getNextCharacter;
   };
-  console.log(newPassword);
   return newPassword;
 };//end of generate password function
 
