@@ -4,21 +4,21 @@
 var generatePassword = function () {
 
   //Prompt user to enter a password length  
-  var passwordLength = window.prompt("Enter a password length.");
+  var passwordLength = window.prompt("Choose a length for your password.");
 
   //If user does not enter a password length, prompt user to try again
   if (!passwordLength) {
     while(!passwordLength) {
       window.alert("You must enter a length for your password.");
-      passwordLength = window.prompt("Enter a password length.");
+      passwordLength = window.prompt("Choose a length for your password.");
     }
   }
 
-  //If length is not 8-128 characters or left blank, prompt user to try again
+  //If length is not 8-128, prompt user to try again
   if (passwordLength < 8 || passwordLength > 128) {
     while(passwordLength < 8 || passwordLength > 128) {
       window.alert("Your password must be between 8 and 128 characters.");
-      passwordLength = window.prompt("Enter a password length.");
+      passwordLength = window.prompt("Choose a length for your password.");
     }
   }
 
@@ -38,7 +38,7 @@ var generatePassword = function () {
     }
   }
   
-  //Base set of arrays to combine based on which character types the user selects
+  //Set of arrays to combine based on which character types the user selects
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t","u", "v", "w", "x", "y", "z"];
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -63,7 +63,7 @@ var generatePassword = function () {
   //Cycle through the loop based on the password length the user chose
   newPassword = "";
 
-  for (i = 0; i <= passwordLength; i++) {
+  for (i = 0; i < passwordLength; i++) {
     getRandomIndex = Math.floor(Math.random() * fullSet.length);
     getNextCharacter = fullSet[getRandomIndex];
     newPassword = newPassword + getNextCharacter;
